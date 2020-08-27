@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <style>
+            * {
+                font-size: 2em;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            body {
+                background: lightpink;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .count {
+                display: flex;
+                align-items: baseline;
+                justify-content: center;
+            }
+
+            .gloria {
+                font-size:  0.5em;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div>
+            <div class="count"><span id='count'></span>Days</div>
+             <span class="gloria">since Gloria died to an invade</span>
+        </div>
+        <script>
+            const lastDiedDate = new Date(Date.UTC(2020, 7, 27, 0, 0, 0))
+            const today = new Date();
+            today.setHours(0)
+            today.setMinutes(0)
+            today.setSeconds(0)
+            const diffTime = Math.abs(lastDiedDate - today);
+            const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24))
+            document.getElementById('count').innerHTML = diffDays
+    </script>
+    </body>
+</html>
