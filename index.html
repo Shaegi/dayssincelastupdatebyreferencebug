@@ -12,7 +12,7 @@
             }
 
             body {
-                background: lightpink;
+                background: white;
                 display: flex;
                 padding: 16px;
                 justify-content: center;
@@ -46,11 +46,10 @@
     </head>
     <body>
         <div class="content">
-            <img src="invadingKittens.jpg" />
             <div class="count">
                 <span id='count'></span>Days 
             <div>
-                <span class="gloria"> since Gloria died to an invade</span>
+                <span class="gloria"> since last update by reference bug</span>
             </div>
         </div>
         <div class="subTitle">
@@ -62,7 +61,7 @@
             const messages = [
                 {
                     dayThreshold: 0,
-                    message: 'Seems like she died today...too bad...',
+                    message: 'Seems like there was a update by reference bug... today...too bad...',
                 },
                 {
                     dayThreshold: 1,
@@ -90,7 +89,7 @@
                 },
                 {
                     dayThreshold: 7,
-                    message: '🎉🎉🎉🎉 A whole week without dying! Incredible!'
+                    message: '🎉🎉🎉🎉 A whole week without reference bug! Incredible!'
                 },
                 {
                     dayThreshold: 30,
@@ -102,14 +101,14 @@
                 }
             ]
             
-            const lastDiedDate = new Date(Date.UTC(2020, 8, 26, 0, 0, 0))
+            const lastDiedDate = new Date(Date.UTC(2021, 1, 16, 0, 0, 0))
             const today = new Date();
             today.setHours(0)
             today.setMinutes(0)
             today.setSeconds(0)
             const diffTime = Math.abs(lastDiedDate - today);
             const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24))
-            document.title = diffDays + ' Days since Gloria died to an invade'
+            document.title = diffDays + ' Days since last update by reference bug'
             document.getElementById('count').innerHTML = diffDays
             document.getElementById('message').innerHTML = messages.find((m, i, a) => m.dayThreshold <= diffDays && a[i +1] && a[i +1].dayThreshold > diffDays).message
         </script>
